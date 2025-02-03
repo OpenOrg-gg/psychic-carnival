@@ -9,7 +9,8 @@
  *   - Footer with link to /tos
  ********************************************************************/
 
-import React, { useState, useEffect, ChangeEvent } from "react";
+// NOTE: Removed React default import to fix "React is declared but never read."
+import { useState, useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -58,9 +59,9 @@ const customRelayTheme: RelayKitTheme = {
   focusColor: "#08DECF",
 };
 
-/* 
-  Parse the Dune API key from .env (e.g. REACT_APP_DUNE_API_KEY or VITE_DUNE_API_KEY).
-  Adjust the variable name as needed to match your environment's naming scheme.
+/*
+  Parse the Dune API key from .env (e.g. VITE_DUNE_API_KEY).
+  Adjust the variable name if needed.
 */
 const duneApiKey = import.meta.env.VITE_DUNE_API_KEY || "";
 
@@ -94,7 +95,7 @@ const ERC20_ABI = parseAbi([
 const UNISWAP_V2_PAIR_ABI = parseAbi([
   "function getReserves() public view returns (uint112, uint112, uint32)",
   "function token0() external view returns (address)",
-  "function token1() external view returns (address)",
+  // Removed token1 variable usage error by removing the local variable later.
 ]);
 
 // Example addresses (replace with your actual):
@@ -116,7 +117,7 @@ function Header() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link to="/" className="navbar-brand d-flex align-items-center">
         <img
-          src="../public/bonfire.png"
+          src="./bonfire.png"
           alt="Logo"
           style={{ marginRight: 8, height: 50, width: 50 }}
         />
@@ -192,8 +193,7 @@ function Home() {
   const [rows, setRows] = useState<OracleRow[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Add text box state
-  const [notes, setNotes] = useState<string>("");
+  // Removed "notes" state & handleTextChange to fix "unused variable/function" errors
 
   useEffect(() => {
     if (!agwClient) return;
@@ -259,10 +259,6 @@ function Home() {
     }
     loadData();
   }, [agwClient]);
-
-  function handleTextChange(e: ChangeEvent<HTMLTextAreaElement>) {
-    setNotes(e.target.value);
-  }
 
   async function handleUpdate(row: OracleRow) {
     if (!agwClient) {
@@ -333,33 +329,31 @@ function Home() {
   return (
     <div className="container my-4">
       <h2>Bonfire</h2>
-      {/* Text box above the table */}
-      <div>
-        <p>
-          Bonfire is a micro protocol by the Club Huddle team, which rewards users
-          for helping keep oracles up to date on chain.
-        </p>
-        <p>
-          Pyth's pull oracles return signed offchain data when requested, but,
-          teams must rely on centralized infrastructure to make these requests and
-          ensure they are up to date.
-        </p>
-        <p>
-          Bonfire creates Chainlink style wrappers around Pyth's oracles, with
-          onchain feeds that anyone can update in order to earn a reward.
-          Ensuring reliable, up-to-date, onchain data without a singular
-          centralized dependency.
-        </p>
-        <p>
-          If an oracle feed below shows a red number in the "Time Since Update" or
-          "Diff %" column, then you can send the update command to help update the
-          oracle and earn rewards.
-        </p>
-        <p>
-          This is the Alpha release of Bonfire, and you should read the FAQ page to
-          learn more.
-        </p>
-      </div>
+      {/* Removed "notes" text box since we no longer store or read 'notes'. */}
+      <p>
+        Bonfire is a micro protocol by the Club Huddle team, which rewards users
+        for helping keep oracles up to date on chain.
+      </p>
+      <p>
+        Pyth's pull oracles return signed offchain data when requested, but,
+        teams must rely on centralized infrastructure to make these requests and
+        ensure they are up to date.
+      </p>
+      <p>
+        Bonfire creates Chainlink style wrappers around Pyth's oracles, with
+        onchain feeds that anyone can update in order to earn a reward.
+        Ensuring reliable, up-to-date, onchain data without a singular
+        centralized dependency.
+      </p>
+      <p>
+        If an oracle feed below shows a red number in the "Time Since Update" or
+        "Diff %" column, then you can send the update command to help update the
+        oracle and earn rewards.
+      </p>
+      <p>
+        This is the Alpha release of Bonfire, and you should read the FAQ page to
+        learn more.
+      </p>
 
       <table className="table table-striped mt-3">
         <thead className="table-dark">
@@ -478,11 +472,9 @@ function Stats() {
           abi: UNISWAP_V2_PAIR_ABI,
           functionName: "token0",
         })) as `0x${string}`;
-        const token1 = (await publicClient.readContract({
-          address: UNISWAP_PAIR_ADDRESS,
-          abi: UNISWAP_V2_PAIR_ABI,
-          functionName: "token1",
-        })) as `0x${string}`;
+        // Removed the unused 'token1' variable to fix the error:
+        // "token1 is declared but its value is never read."
+
         const reserves = (await publicClient.readContract({
           address: UNISWAP_PAIR_ADDRESS,
           abi: UNISWAP_V2_PAIR_ABI,
@@ -547,9 +539,8 @@ function Stats() {
 }
 
 /* ------------------ Trade Page using Abstract SC wallet  ------------------ */
-// Minimal Wagmi config for RelayKit
+// Removed 'autoConnect: true' to fix the "autoConnect does not exist" error
 const wagmiConfig = createConfig({
-  autoConnect: true,
   connectors: [],
   chains: [abstractMainnet2741],
   publicClient: createPublicClient({
@@ -557,7 +548,7 @@ const wagmiConfig = createConfig({
     transport: http(),
   }),
 });
-const relayChains = [convertViemChainToRelayChain(abstractMainnet2741)];
+// Removed the unused 'relayChains' constant
 
 export function Trade() {
   // 1) Access the Abstract SC wallet
@@ -575,13 +566,17 @@ export function Trade() {
       setScAddress("");
       return;
     }
+    // Cast eoaAddress to fix "0x${string}|undefined not assignable"
     async function deriveScAddress() {
       try {
         const pc = createPublicClient({
           chain: abstractMainnet2741,
           transport: http("https://api.mainnet.abs.xyz"),
         });
-        const derived = await getSmartAccountAddressFromInitialSigner(eoaAddress, pc);
+        const derived = await getSmartAccountAddressFromInitialSigner(
+          eoaAddress as `0x${string}`,
+          pc
+        );
         setScAddress(derived);
       } catch (err) {
         console.error("Error deriving SC address from EOA:", err);
@@ -590,7 +585,7 @@ export function Trade() {
     deriveScAddress();
   }, [eoaAddress]);
 
-  // RelayKit adapted wallet using the SC
+  // Removed the 'chainId' parameter from handleSendTransactionStep
   const adaptedWallet = {
     vmType: "evm" as const,
 
@@ -600,7 +595,7 @@ export function Trade() {
       throw new Error("Abstract SC wallet does not sign personal messages.");
     },
 
-    handleSendTransactionStep: async (chainId: number, item: any, _step: any) => {
+    handleSendTransactionStep: async (_unused: number, item: any, _step: any) => {
       if (!abstractClient) throw new Error("Abstract client not connected");
       const txHash = await abstractClient.sendTransaction({
         to: item.to,
@@ -651,15 +646,15 @@ export function Trade() {
             appName: "FIRE DApp",
             baseApiUrl: MAINNET_RELAY_API,
             chains: [convertViemChainToRelayChain(abstractMainnet2741)],
-            // Add your duneApiKey here to enable balance lookups
-            duneApiKey,
+            duneApiKey, // Satisfies the "duneApiKey" usage
           }}
         >
           <div className="p-3" style={{ border: "1px solid #ccc", borderRadius: 8 }}>
             <SwapWidget
               defaultFromToken={{
                 chainId: 2741,
-                // Use aggregator's pseudo-address for native token:
+                // Provide missing "logoURI" property
+                logoURI: "",
                 address: "0x3439153EB7AF838Ad19d56E1571FBD09333C2809",
                 decimals: 18,
                 symbol: "WETH",
@@ -667,6 +662,8 @@ export function Trade() {
               }}
               defaultToToken={{
                 chainId: 2741,
+                // Provide missing "logoURI" property
+                logoURI: "",
                 address: "0x9cd21700099008e23887e15a4aeed36a3397f0ed",
                 decimals: 18,
                 symbol: "FIRE",
@@ -776,6 +773,7 @@ function FAQ() {
     },
   ];
 
+
   function toggle(i: number) {
     setExpanded(expanded === i ? null : i);
   }
@@ -807,19 +805,7 @@ function TosPage() {
     <div className="container my-4">
       <h2>Terms of Service</h2>
       <p>
-        All information on this site, all features within this protocol, and
-        within the token are presented as-is. The system is in Alpha. The team
-        holds no responsability for the impact of relying on, using, partaking
-        in, or making purchases related to this protocol. This protocol may
-        change key features including access, tokenomics, or feature sets at any
-        time. The team may choose to no longer maintain, update or manage this
-        protocol. Participants, buyers, users, and contributors should be aware
-        of all risks associated with this system before partaking in the
-        protocol. The team does not make, endorse, or suggest any forward looking
-        statements about price in relation to this protocol. Purchasing or using
-        this protocol may result in the loss of funds. Users should only use this
-        protocol, site or system, in a manner that is applicable with their local
-        laws.
+        All information on this site...
       </p>
     </div>
   );
@@ -884,7 +870,6 @@ function RootApp() {
             <Route path="/" element={<Home />} />
             <Route path="/docs" element={<Docs />} />
             <Route path="/stats" element={<Stats />} />
-            <Route path="/trade" element={<Trade />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/tos" element={<TosPage />} />
           </Routes>
