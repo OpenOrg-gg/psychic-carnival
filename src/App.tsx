@@ -155,7 +155,7 @@ function Header() {
             <Link to="/stats" className="nav-link">Stats</Link>
           </li>
           <li className="nav-item">
-            <Link to="/trade" className="nav-link">Trade</Link>
+            <Link to="/contracts" className="nav-link">Contracts</Link>
           </li>
           <li className="nav-item">
             <Link to="/faq" className="nav-link">FAQ</Link>
