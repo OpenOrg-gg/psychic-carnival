@@ -354,6 +354,9 @@ function Home() {
         This is the Alpha release of Bonfire, and you should read the FAQ page to
         learn more.
       </p>
+      <p>
+        The Bonfire token is: 0x9cd21700099008e23887e15a4aeed36a3397f0ed
+      </p>
 
       <table className="table table-striped mt-3">
         <thead className="table-dark">
@@ -753,7 +756,7 @@ function FAQ() {
     },
     {
       q: "Are there social channels for $FIRE?",
-      a: "No. Not at this time. When Club Huddle is ready to launch, it will contain a sub-channel for Bonfire. Until then, any critical announcements will solely be from this Bonfire website. This is in order to protect the team's time and attention."
+      a: "@BonfireProtocol on Twitter. The project will have a dedicated discord channel in the Club Huddle discord when that channel launches, until then all updates are via Twitter so the team can remain focused on the product."
     },
     {
       q: "Does Bonfire have investors?",
@@ -804,8 +807,136 @@ function TosPage() {
   return (
     <div className="container my-4">
       <h2>Terms of Service</h2>
+  <h1>Terms of Service for Bonfire Protocol</h1>
+  <p><strong>Last Updated:</strong> February 7, 2025</p>
+  
+  <p>Please read these Terms of Service (“Terms”) carefully before using the Bonfire Protocol website, applications, protocols, tokens, smart contracts, or any associated integrations (collectively, the “Services”). By accessing or using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree with these Terms, you must not access or use any part of the Services.</p>
+
+  
+  <h2>1. Acceptance of Terms</h2>
+  <p>By using our Services, you represent and warrant that you have read, understood, and agree to be legally bound by these Terms. This includes, without limitation, your acceptance of the risk involved in interacting with decentralized finance (DeFi) products, blockchain oracles, tokens, smart contracts, and any integrations provided by Bonfire Protocol.</p>
+  
+  <h2>2. Description of the Services</h2>
+  <p>Bonfire Protocol is a decentralized finance platform that provides blockchain-based tokens, smart contracts, and oracle integrations designed to supply real-time data to various financial applications. The Services are provided solely for informational purposes and for facilitating decentralized financial interactions. All features, functionalities, and tokenomics are provided strictly “as is” without any express or implied warranties.</p>
+  
+  <h2>3. Modification of Terms</h2>
+  <p>Bonfire Protocol reserves the right to modify, amend, suspend, or discontinue, temporarily or permanently, the Services or any part thereof at any time and without prior notice. This includes changes to the economics, features, or functionalities of the project. Your continued use of the Services after any such changes constitutes your acceptance of the new Terms.</p>
+  
+  <h2>4. Use of the Services “As Is”</h2>
+  <ul>
+    <li>
+      <strong>No Warranty:</strong> The Services, including all tokens, smart contracts, oracles, data feeds, and integrations, are provided on an “as is” and “as available” basis without any warranty of any kind, either express or implied.
+    </li>
+    <li>
+      <strong>Assumption of Risk:</strong> You expressly acknowledge and agree that the use of the Services is entirely at your own risk. Bonfire Protocol makes no representations or warranties regarding the reliability, accuracy, completeness, or timeliness of any data provided, including but not limited to the data supplied via blockchain oracles.
+    </li>
+  </ul>
+  
+  <h2>5. Risk Acknowledgment</h2>
+  <p>By using the Services, you acknowledge and accept that:</p>
+  <ul>
+    <li>
+      <strong>Price and Financial Risk:</strong> Interacting with blockchain oracles may expose you or any project integrating our oracles to price volatility and other market risks. Similarly, purchasing or using tokens associated with the Services may result in significant financial loss.
+    </li>
+    <li>
+      <strong>No Guarantees on Future Value:</strong> There are no promises or guarantees regarding the future value, profitability, or appreciation of any tokens or assets associated with Bonfire Protocol.
+    </li>
+    <li>
+      <strong>Protocol Reliability:</strong> There are no assurances regarding the uninterrupted availability, performance, or security of the Services. The technical and market environment of decentralized finance is inherently volatile and subject to rapid change.
+    </li>
+  </ul>
+  
+  <h2>6. Waiver of Legal Claims and Limitation of Liability</h2>
+  <p>
+    <strong>Waiver of Claims:</strong> By using the Services, you, as well as any integrators, partners, or buyers, expressly waive any and all legal claims, actions, or causes of action against the creators, developers, affiliates, and partners of Bonfire Protocol (collectively, “Bonfire Parties”), to the maximum extent permitted by applicable law.
+  </p>
+  <p>
+    <strong>Limitation of Liability:</strong> In no event shall Bonfire Parties be liable for any indirect, incidental, consequential, special, or punitive damages, including but not limited to loss of profits, revenue, data, or use, incurred directly or indirectly, whether in an action in contract or tort, even if Bonfire Parties have been advised of the possibility of such damages. Your sole remedy for dissatisfaction with the Services is to discontinue using them.
+  </p>
+  
+  <h2>7. User Responsibilities and Compliance</h2>
+  <ul>
+    <li>
+      <strong>Due Diligence:</strong> You are solely responsible for performing your own research and due diligence before interacting with the Services. This includes evaluating the risks associated with decentralized finance, blockchain technology, oracles, and smart contracts.
+    </li>
+    <li>
+      <strong>Legal Compliance:</strong> You agree to use the Services only in jurisdictions where such use is legal. It is your responsibility to ensure that your use of the Services complies with all applicable local, state, national, and international laws and regulations.
+    </li>
+    <li>
+      <strong>Integration and Third-Party Services:</strong> The Services may integrate with third-party systems or platforms. Your interactions with any third-party services are governed by the terms and conditions of those services, and Bonfire Protocol is not responsible for their performance, reliability, or legal compliance.
+    </li>
+  </ul>
+  
+  <h2>8. Third-Party Content and Integrations</h2>
+  <p>
+    The Services may incorporate links to third-party websites, services, or content, or may interact with third-party protocols and smart contracts. Bonfire Protocol does not control, endorse, or assume responsibility for any such third-party content, and your use of third-party services is at your own risk. Any reliance on third-party data, oracles, or integrations is strictly at your discretion and risk.
+  </p>
+  
+  <h2>9. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless the Bonfire Parties from and against any and all claims, damages, obligations, losses, liabilities, costs, or expenses (including reasonable attorneys’ fees) arising from:</p>
+  <ul>
+    <li>Your use of the Services;</li>
+    <li>Your violation of these Terms;</li>
+    <li>Any infringement or misappropriation of any third-party rights by you;</li>
+    <li>Any actions or omissions by you that result in legal claims against the Bonfire Parties.</li>
+  </ul>
+  
+  <h2>10. Dispute Resolution</h2>
+  <ul>
+    <li>
+      <strong>Arbitration:</strong> Any dispute, controversy, or claim arising out of or relating to these Terms or the Services shall be resolved exclusively through binding arbitration in accordance with the rules of a recognized arbitration institution in the relevant jurisdiction. Notwithstanding the foregoing, either party may seek injunctive or equitable relief in a court of competent jurisdiction for matters not subject to arbitration.
+    </li>
+    <li>
+      <strong>Governing Law:</strong> These Terms and any disputes related thereto shall be governed by and construed in accordance with the laws of the jurisdiction in which Bonfire Protocol is incorporated, without regard to its conflict of law provisions.
+    </li>
+  </ul>
+  
+  <h2>11. Entire Agreement and Severability</h2>
+  <ul>
+    <li>
+      <strong>Entire Agreement:</strong> These Terms, together with any additional policies referenced herein, constitute the entire agreement between you and Bonfire Protocol regarding your use of the Services and supersede all prior or contemporaneous communications and proposals, whether electronic, oral, or written.
+    </li>
+    <li>
+      <strong>Severability:</strong> If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect, and the invalid or unenforceable provision shall be replaced by a valid, enforceable provision that most closely reflects the intent of the original provision.
+    </li>
+  </ul>
+  
+  <h2>12. Contact Information</h2>
+  <p>If you have any questions about these Terms or require further information, please contact us at:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:support@bonfireprotocol.com">support@bonfireprotocol.com</a></li>
+    <li><strong>Address:</strong> Not provided.</li>
+  </ul>
+  
+  <h2>13. Final Acknowledgment</h2>
+  <p>By accessing or using the Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, please immediately cease using the Services.</p>
+  
+  <p><em>Use of the Bonfire Protocol Services is entirely at your own risk. You acknowledge that decentralized finance, blockchain oracles, tokens, and smart contracts carry inherent risks, including significant financial loss, and that no assurances are provided regarding future value or reliability.</em></p>
+  
+  <p>&copy; 2025 Bonfire Protocol. All rights reserved.</p>
+</div>
+  );
+}
+
+/* -- Contracts --*/
+function Contracts() {
+  return (
+    <div className="container my-4">
+      <h2>Contracts - Abstract:</h2>
       <p>
-        All information on this site...
+        <b>$FIRE token:</b> 0x9cd21700099008E23887E15A4AEED36A3397f0ed
+      </p>
+      <p>
+        <b>Price Feed Factory:</b> 0x3C8351d78bae36AaC0e92e3708567D779d54d80F
+      </p>
+      <p>
+        <b>USDC/USD Feed: 0x48de5c8F33D232326738A0Af9B2404e92f46216f</b> 
+      </p>
+      <p>
+        <b>ETH/USD Feed: 0xD458FF81052d886d4D8ceB494b24439A06EE7878</b> 
+      </p>
+      <p>
+        <b>PENGU/USD Feed: 0x43BDd9055Da35746A820508fB1dF36cD7aBB7045</b> 
       </p>
     </div>
   );
@@ -825,8 +956,9 @@ function MainContent() {
     <div className="container my-5">
       <h1 className="mb-3"></h1>
       <p className="mb-4">
-        This DApp uses Viem’s <code>publicClient</code> for reads
-        and Abstract Wallet for writes.
+        You must connect your Abstract Global Wallet to load the home page. For maximum decentralization this page does not rely on a backend or API and reads contracts directly offchain from your Abstract Global Wallet's connection to the Abstract chain.
+      
+      Follow <a href="https://x.com/BonfireProtocol">@BonfireProtocol</a> for updates.
       </p>
       {!isLoggedIn ? (
         <button className="btn btn-primary" onClick={() => login()}>
@@ -871,6 +1003,7 @@ function RootApp() {
             <Route path="/docs" element={<Docs />} />
             <Route path="/stats" element={<Stats />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/contracts" element={<Contracts /> } />
             <Route path="/tos" element={<TosPage />} />
           </Routes>
           <MainContent />
